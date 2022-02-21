@@ -1,6 +1,5 @@
 function doSomeWork() {
-
-    alert("I'm doing some work!!!");
+    console.log("Doing some work - hooked up");
 }
 
-doSomeWork()
+doSomeWork();
