@@ -26,6 +26,16 @@
         <form:errors path="lastName" cssClass="error" />
 
         <br><br>
+        Free passes: <form:input path="freePasses" />
+        <form:errors cssClass="error" path="freePasses"/>
+        <br><br>
+        Postal Code: <form:input path="postalCode" />
+        <form:errors cssClass="error" path="postalCode"/>
+        <br><br>
+        Course Code: <form:input path="courseCode" />
+        <form:errors cssClass="error" path="courseCode"/>
+        <br><br>
+
         <input type="submit" value="Submit" />
     </form:form>
 </body>

@@ -1,7 +1,8 @@
 package com.example.springmvcdemo;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import com.example.springmvcdemo.validation.CourseCode;
+
+import javax.validation.constraints.*;
 
 public class Customer {
 
@@ -9,6 +10,17 @@ public class Customer {
     @NotNull(message = "is required")
     @Size(min=1, message = "is required")
     private String lastName;
+
+    @NotNull(message = "is required")
+    @Min(value=0, message="must be greater than or equal to zero")
+    @Max(value=10, message="must be less than or equal to 10")
+    private Integer freePasses; // need this so that spring can turn a string to int or null
+
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
+    private String postalCode;
+
+    @CourseCode(value = "LUV", message = "Must start with LUV")
+    private String courseCode;
 
     public String getLastName() {
         return lastName;
@@ -24,5 +36,29 @@ public class Customer {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public Integer getFreePasses() {
+        return freePasses;
+    }
+
+    public void setFreePasses(Integer freePasses) {
+        this.freePasses = freePasses;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
